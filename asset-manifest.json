@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mens-wash/static/css/main.b0373dcf.css",
-    "main.js": "/mens-wash/static/js/main.2f375efd.js",
+    "main.js": "/mens-wash/static/js/main.5270ce78.js",
     "static/js/453.209d4f9d.chunk.js": "/mens-wash/static/js/453.209d4f9d.chunk.js",
     "index.html": "/mens-wash/index.html",
     "main.b0373dcf.css.map": "/mens-wash/static/css/main.b0373dcf.css.map",
-    "main.2f375efd.js.map": "/mens-wash/static/js/main.2f375efd.js.map",
+    "main.5270ce78.js.map": "/mens-wash/static/js/main.5270ce78.js.map",
     "453.209d4f9d.chunk.js.map": "/mens-wash/static/js/453.209d4f9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0373dcf.css",
-    "static/js/main.2f375efd.js"
+    "static/js/main.5270ce78.js"
   ]
 }
