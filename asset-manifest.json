@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mens-wash/static/css/main.a8039a39.css",
+    "main.js": "/mens-wash/static/js/main.3ac7aeba.js",
+    "static/js/453.ad6eb26e.chunk.js": "/mens-wash/static/js/453.ad6eb26e.chunk.js",
+    "index.html": "/mens-wash/index.html",
+    "main.a8039a39.css.map": "/mens-wash/static/css/main.a8039a39.css.map",
+    "main.3ac7aeba.js.map": "/mens-wash/static/js/main.3ac7aeba.js.map",
+    "453.ad6eb26e.chunk.js.map": "/mens-wash/static/js/453.ad6eb26e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8039a39.css",
+    "static/js/main.3ac7aeba.js"
+  ]
+}
