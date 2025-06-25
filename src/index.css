@@ -1,0 +1,483 @@
+/* ==================================================
+   Global Reset and Base Styles
+   ================================================== */
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+   }
+   
+   body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+     background-color: #EAEDED; /* Amazon-like light grey background */
+     color: #111;
+   }
+   
+   a {
+     text-decoration: none;
+     color: inherit;
+   }
+   
+   /* ==================================================
+      Header Styles (Amazon-like top bar)
+      ================================================== */
+   .app-header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background-color: #131921; /* Amazon dark header */
+     padding: 0 16px;
+     height: 60px;
+     color: #fff;
+   }
+   
+   .header-left {
+     display: flex;
+     align-items: center;
+   }
+   
+   .logo-link {
+     display: inline-block;
+   }
+   
+   .logo-img {
+     height: 40px;
+     object-fit: contain;
+   }
+   
+   .site-name {
+     margin-left: 8px;
+     font-size: 20px;
+     font-weight: 600;
+   }
+   
+   .header-center {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+   }
+   
+   .search-form {
+     display: flex;
+     width: 100%;
+     max-width: 600px;
+     border-radius: 4px;
+     overflow: hidden;
+   }
+   
+   .search-input {
+     flex: 1;
+     border: none;
+     padding: 8px;
+     font-size: 16px;
+   }
+   
+   .search-input:focus {
+     outline: none;
+   }
+   
+   .search-button {
+     background-color: #febd69;
+     border: none;
+     padding: 0 12px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+   }
+   
+   .search-button:hover {
+     background-color: #f3a847;
+   }
+   
+   .search-icon {
+     width: 20px;
+     height: 20px;
+     color: #111;
+   }
+   
+   .header-right {
+     display: flex;
+     align-items: center;
+   }
+   
+   .nav-item {
+     display: flex;
+     flex-direction: column;
+     margin-left: 16px;
+     font-size: 12px;
+     cursor: pointer;
+   }
+   
+   .nav-line1 {
+     font-size: 12px;
+   }
+   
+   .nav-line2 {
+     font-size: 14px;
+     font-weight: 600;
+   }
+   
+   .cart-item {
+     display: flex;
+     align-items: center;
+   }
+   
+   .cart-icon {
+     width: 24px;
+     height: 24px;
+     margin-right: 4px;
+     color: #fff;
+   }
+   
+   .cart-count {
+     font-size: 14px;
+     font-weight: 600;
+     margin-right: 4px;
+   }
+   
+   /* ==================================================
+      Grid/Card Styles (ProductGrid)
+      ================================================== */
+   .grid-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+     gap: 16px;
+     max-width: 1200px;
+     margin: 16px auto;
+     padding: 0 16px;
+   }
+   
+   .card-wrapper {
+     position: relative;
+   }
+   
+   .card {
+     background-color: #fff;
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+     cursor: pointer;
+     transition: box-shadow 0.2s, transform 0.2s;
+   }
+   
+   .card:hover {
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     transform: translateY(-2px);
+   }
+   
+   .card-image-container {
+     width: 100%;
+     height: 200px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #f9f9f9;
+   }
+   
+   .card-image-container img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+     cursor: pointer;
+   }
+   
+   .card-body {
+     padding: 8px 12px;
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+   }
+   
+   .card-title {
+     font-size: 0.9rem;
+     color: #111;
+     line-height: 1.2;
+     margin-bottom: 4px;
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+   }
+   
+   .card-price {
+     margin: 4px 0;
+     font-size: 1rem;
+     font-weight: bold;
+     color: #B12704; /* Amazon-like price red */
+   }
+   
+   .card-rating {
+     display: flex;
+     align-items: center;
+     margin-bottom: 6px;
+     font-size: 0.85rem;
+     color: #555;
+   }
+   
+   .star.full {
+     color: #f0c14b;
+     margin-right: 2px;
+     font-size: 1rem;
+   }
+   
+   .star.empty {
+     color: #ccc;
+     margin-right: 2px;
+     font-size: 1rem;
+   }
+   
+   .star.half {
+     background: linear-gradient(90deg, #f0c14b 50%, #ccc 50%);
+     -webkit-background-clip: text;
+     color: transparent;
+     margin-right: 2px;
+     font-size: 1rem;
+   }
+   
+   .review-count {
+     margin-left: 4px;
+     color: #007185;
+     font-size: 0.85rem;
+   }
+   
+   .card-button-container {
+     margin-top: auto;
+     padding-top: 8px;
+   }
+   
+   .card-button {
+     width: 100%;
+     padding: 8px;
+     background-color: #f0c14b;
+     border: 1px solid #a88734;
+     border-radius: 2px;
+     text-align: center;
+     font-size: 0.9rem;
+     font-weight: 500;
+     color: #111;
+     cursor: pointer;
+     transition: background-color 0.2s;
+   }
+   
+   .card-button:hover {
+     background-color: #e2b33c;
+   }
+   
+   .card-badge {
+     position: absolute;
+     top: 8px;
+     left: 8px;
+     background-color: rgba(255,255,255,0.9);
+     color: #111;
+     font-size: 0.75rem;
+     padding: 2px 4px;
+     border-radius: 2px;
+   }
+   
+   /* ==================================================
+      Popup Overlay Styles (Add-to-Cart ronny_t)
+      ================================================== */
+   .popup-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 2000;
+     opacity: 1;
+     transition: opacity 2s ease;
+   }
+   
+   .popup-overlay.fade-out {
+     opacity: 0;
+   }
+   
+   .popup-image {
+     max-width: 80%;
+     max-height: 80%;
+   }
+   
+   /* ==================================================
+      Detail Modal Styles
+      ================================================== */
+   .product-modal-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 1500;
+   }
+   
+   .product-modal-content {
+     background-color: #fff;
+     width: 90%;
+     max-width: 800px;
+     max-height: 90vh;
+     border-radius: 4px;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+   }
+   
+   .product-modal-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 16px;
+     border-bottom: 1px solid #ddd;
+   }
+   
+   .product-modal-close {
+     background: none;
+     border: none;
+     font-size: 1.25rem;
+     cursor: pointer;
+     line-height: 1;
+   }
+   
+   .product-modal-body {
+     padding: 16px;
+     overflow-y: auto;
+     flex: 1;
+   }
+   
+   .product-modal-top {
+     display: flex;
+     flex-direction: column;
+   }
+   
+   @media (min-width: 600px) {
+     .product-modal-top {
+       flex-direction: row;
+     }
+   }
+   
+   .product-modal-image-container {
+     flex: 1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   
+   .product-modal-image-container img {
+     max-width: 100%;
+     max-height: 300px;
+     object-fit: contain;
+     cursor: zoom-in;
+   }
+   
+   .product-modal-details {
+     flex: 1;
+     margin-top: 16px;
+   }
+   
+   @media (min-width: 600px) {
+     .product-modal-details {
+       margin-top: 0;
+       padding-left: 16px;
+     }
+   }
+   
+   .product-modal-title {
+     font-size: 1.2rem;
+     font-weight: 600;
+     margin-bottom: 8px;
+   }
+   
+   .product-modal-price {
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: #B12704;
+     margin-bottom: 8px;
+   }
+   
+   .product-modal-rating {
+     display: flex;
+     align-items: center;
+     margin-bottom: 8px;
+   }
+   
+   .product-modal-reviews {
+     margin-top: 16px;
+   }
+   
+   .product-modal-review-item {
+     border-top: 1px solid #eee;
+     padding: 8px 0;
+   }
+   
+   .product-modal-review-author {
+     font-weight: 500;
+     margin-bottom: 4px;
+   }
+   
+   .product-modal-review-text {
+     font-size: 0.9rem;
+     color: #333;
+     margin-bottom: 4px;
+   }
+   
+   .product-modal-review-rating {
+     display: flex;
+     align-items: center;
+     margin-bottom: 4px;
+   }
+   
+   /* ==================================================
+      Fullscreen Image Overlay Styles
+      ================================================== */
+   .fullscreen-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.9);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 3000;
+     cursor: zoom-out;
+   }
+   
+   .fullscreen-overlay img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+   }
+   
+   /* ==================================================
+      Thumbnail Carousel Styles (inside modal)
+      ================================================== */
+   .image-carousel {
+     display: flex;
+     overflow-x: auto;
+     margin-top: 8px;
+   }
+   
+   .image-carousel img {
+     width: 60px;
+     height: 60px;
+     object-fit: cover;
+     margin-right: 8px;
+     cursor: pointer;
+     border: 2px solid transparent;
+   }
+   
+   .image-carousel img.selected {
+     border-color: #f0c14b;
+   }
+   

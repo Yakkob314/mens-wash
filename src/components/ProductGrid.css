@@ -1,0 +1,161 @@
+/* Grid container: responsive, up to 4 items per row */
+.grid-container {
+    display: grid;
+    /* try to show 4 columns; each at least 200px wide */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  
+  /* Hover effect similar to Amazon slightly raising card */
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* Image container: fixed height to keep images consistent */
+  .card-image-container {
+    width: 100%;
+    height: 200px; /* adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+  
+  /* Actual image: contain within container */
+  .card-image-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  /* Card body with padding */
+  .card-body {
+    padding: 8px 12px;
+    flex: 1; /* fill remaining space */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Title: allow up to two lines, then ellipsis */
+  .card-title {
+    font-size: 0.9rem;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Price styling: like Amazon: currency symbol small, main price bold */
+  .card-price {
+    margin: 4px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #B12704; /* Amazon red-ish */
+  }
+  
+  /* Rating area */
+  .card-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  
+  /* Star styling: full, half, empty */
+  .star {
+    font-size: 1rem;
+    margin-right: 2px;
+    line-height: 1;
+    display: inline-block;
+  }
+  
+  /* Full star color */
+  .star.full {
+    color: #f0c14b; /* Amazon star color */
+  }
+  
+  /* Empty star color */
+  .star.empty {
+    color: #ccc;
+  }
+  
+  /* Half star: use text star with gradient fill clipped */
+  .star.half {
+    /* background gradient left half filled, right half gray */
+    background: linear-gradient(90deg, #f0c14b 50%, #ccc 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Review count text */
+  .review-count {
+    margin-left: 4px;
+    color: #007185;
+    font-size: 0.85rem;
+  }
+  
+  /* Button area */
+  .card-button-container {
+    margin-top: auto; /* push button to bottom */
+    padding-top: 8px;
+  }
+  
+  /* “Add to Cart” style button */
+  .card-button {
+    width: 100%;
+    padding: 8px;
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #111;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .card-button:hover {
+    background-color: #e2b33c;
+  }
+  
+  /* Optional: “Sponsored” or other badge at top-left */
+  .card-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #111;
+    font-size: 0.75rem;
+    padding: 2px 4px;
+    border-radius: 2px;
+  }
+  
+  /* Position badge container relative */
+  .card-wrapper {
+    position: relative;
+  }
+  
